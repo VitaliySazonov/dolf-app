@@ -9,6 +9,15 @@ import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoute: Routes = [
+  { path: '',           component: HomeComponent },
+  { path: '/reg',       component: RegComponent },
+  { path: '/auth',      component: AuthComponent },
+  { path: '/dashboard', component: DashboardComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +29,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
