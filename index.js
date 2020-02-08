@@ -8,7 +8,8 @@ const
     config              = require('./config/db'),
     account             = require('./routes/account'),
     app                 = express(),
-    port                = 3000;
+    // port                = 3000;
+    port                = process.env.PORT || 8080;
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -24,4 +25,4 @@ mongoose.connection.on('error',         () => console.log('MongoDB => NO'));
 app.listen(port, () => console.log(`Port ${port} => OK`));
 app.get('/', (req, res) => res.send('Main page'));
 app.use('/account', account);
-
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
