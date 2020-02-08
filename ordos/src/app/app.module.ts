@@ -16,12 +16,13 @@ import {CheckFormService} from "./check-form.service";
 import {FlashMessagesModule} from "angular2-flash-messages";
 import {AuthService} from "./auth.service";
 import {HttpModule} from "@angular/http";
+import {IsLoggedIn} from "./isLogged.guard";
 
 const appRoute: Routes = [
-  { path: '',           component: HomeComponent },
+  { path: '',          component: HomeComponent },
   { path: 'reg',       component: RegComponent },
   { path: 'auth',      component: AuthComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [IsLoggedIn] },
 ];
 
 @NgModule({
@@ -44,7 +45,8 @@ const appRoute: Routes = [
   ],
   providers: [ // .services.ts
     CheckFormService,
-    AuthService
+    AuthService,
+    IsLoggedIn
   ],
   bootstrap: [AppComponent]
 })

@@ -2,8 +2,8 @@
   <a [routerLink]="['/']" class="logo my-0 text-dark mr-md-auto font-weight-bold font-size-20px">Ordos</a>
   <nav class="my-2 my-md-0 mr-md-3">
   </nav>
-  <a class="btn btn-outline-primary mr-3" [routerLink]="['/dashboard']">My account</a>
-  <a class="btn btn-outline-primary mr-3" [routerLink]="['/auth']">Login</a>
-  <a class="btn btn-outline-primary mr-3" [routerLink]="['/reg']">Sign up</a>
-  <button class="btn btn-warning" (click)="logoutUser()">Log out</button>
+  <a  *ngIf="authService.isLoggedIn()" class="btn btn-outline-primary mr-3" [routerLink]="['/dashboard']">My account</a>
+  <a  class="btn btn-outline-primary mr-3" [routerLink]="['/auth']">Login</a>
+  <a  class="btn btn-outline-primary mr-3" [routerLink]="['/reg']">Sign up</a>
+  <a  class="btn btn-warning" (click)="logoutUser()">Logout</a>
 </div>

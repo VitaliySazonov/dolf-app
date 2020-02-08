@@ -75,7 +75,7 @@ export class RegComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 5000
         });
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
       }
     });
 
