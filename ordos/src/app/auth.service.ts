@@ -20,7 +20,8 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     return this
       .http
-      .post('http://localhost:3000/account/reg', user, {headers: headers})
+      // .post('http://localhost:3000/account/reg', user, {headers: headers})
+      .post('account/reg', user, {headers: headers})
       .pipe(map((response: any) => response.json()));
   };
 
@@ -29,7 +30,8 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     return this
       .http
-      .post('http://localhost:3000/account/auth', user, {headers: headers})
+      // .post('http://localhost:3000/account/auth', user, {headers: headers})
+      .post('account/auth', user, {headers: headers})
       .pipe(map((response: any) => response.json()));
   }
 
