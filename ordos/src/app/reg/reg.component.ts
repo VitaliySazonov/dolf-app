@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckFormService } from "../check-form.service";
 import { FlashMessagesService } from "angular2-flash-messages";
+import { AuthService } from "../auth.service";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -17,7 +19,9 @@ export class RegComponent implements OnInit {
 
   constructor(
     private checkForm: CheckFormService,
-    private flashMessages: FlashMessagesService
+    private flashMessages: FlashMessagesService,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
 
@@ -58,6 +62,22 @@ export class RegComponent implements OnInit {
       });
       return false;
     } else console.log("OK");
+
+    this.authService.registerUser(user).subscribe(data => {
+      if (!data.success) {
+        this.flashMessages.show(data.msg, {
+          cssClass: 'alert-danger',
+          timeout: 2000
+        });
+        this.router.navigate(['/reg']);
+      } else {
+        this.flashMessages.show(data.msg, {
+          cssClass: 'alert-success',
+          timeout: 5000
+        });
+        this.router.navigate(['/dashboard']);
+      }
+    });
 
   }
 
