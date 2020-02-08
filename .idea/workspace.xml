@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07713a79-74d5-4194-a168-50aa3cd7a7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordos/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/ordos/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordos/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ordos/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordos/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ordos/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +31,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\TZ\dolf-app\ordos\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
