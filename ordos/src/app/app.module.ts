@@ -13,9 +13,9 @@ import {RouterModule, Routes} from "@angular/router";
 
 const appRoute: Routes = [
   { path: '',           component: HomeComponent },
-  { path: '/reg',       component: RegComponent },
-  { path: '/auth',      component: AuthComponent },
-  { path: '/dashboard', component: DashboardComponent },
+  { path: 'reg',       component: RegComponent },
+  { path: 'auth',      component: AuthComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({
