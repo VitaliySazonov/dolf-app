@@ -1,1 +1,8 @@
-<p>reg works!</p>
+<h3>Registration form</h3>
+<form (submit)="userRegisterClick()">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="Name" class="form-control"><br>
+  <input type="text" [(ngModel)]="login" name="login" placeholder="Login" class="form-control"><br>
+  <input type="text" [(ngModel)]="email" name="email" placeholder="Email" class="form-control"><br>
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="form-control"><br>
+  <button type="submit" class="btn btn-success">Registration</button>
+</form>

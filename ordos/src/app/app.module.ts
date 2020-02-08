@@ -11,12 +11,18 @@ import { HomeComponent } from './home/home.component';
 
 import {RouterModule, Routes} from "@angular/router";
 import { FooterComponent } from './footer/footer.component';
+import {FormsModule} from "@angular/forms";
+import {CheckFormService} from "./check-form.service";
+import {FlashMessagesModule} from "angular2-flash-messages";
+import {AuthService} from "./auth.service";
+import {HttpModule} from "@angular/http";
+import {IsLoggedIn} from "./isLogged.guard";
 
 const appRoute: Routes = [
-  { path: '',           component: HomeComponent },
+  { path: '',          component: HomeComponent },
   { path: 'reg',       component: RegComponent },
   { path: 'auth',      component: AuthComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [IsLoggedIn] },
 ];
 
 @NgModule({
@@ -29,12 +35,19 @@ const appRoute: Routes = [
     HomeComponent,
     FooterComponent
   ],
-  imports: [
+  imports: [ // modules
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    FormsModule,
+    FlashMessagesModule.forRoot(),
+    HttpModule
   ],
-  providers: [],
+  providers: [ // .services.ts
+    CheckFormService,
+    AuthService,
+    IsLoggedIn
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
