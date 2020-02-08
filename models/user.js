@@ -25,4 +25,11 @@ module.exports.addUser = (newUser, callback) => {
     })
 };
 
+module.exports.comparePass = (passFromUser, userDBPass, callback) => {
+  bcrypt.compare(passFromUser, userDBPass, (err, isMach) => {
+      if (err) throw err;
+      callback(null, isMach);
+  })
+};
+
 
